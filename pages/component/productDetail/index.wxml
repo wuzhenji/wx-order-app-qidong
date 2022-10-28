@@ -1,0 +1,18 @@
+<view class="productinfo">
+    <view class="productinfo-content">
+      <view class="content-name">{{productDetail.productName}}</view>
+      <swiper indicator-dots="true" autoplay="true">
+        <swiper-item wx:for="{{productDetail.imagesUrl}}" :wx:key="index">
+          <view class="swipercon">
+            <image mode="aspectFit" src="{{item.iconUrl}}"></image>
+          </view>
+        </swiper-item>
+      </swiper>
+      <view wx:if="{{productDetail.startDate}}" class="content-line">限购：{{productDetail.buyLimit ? productDetail.buyLimit : '暂无'}}</view>
+      <view wx:if="{{productDetail.startDate}}" class="content-line">购买时间：{{productDetail.startDate}} - {{productDetail.endDate}}</view>
+      <view wx:if="{{productDetail.startDate}}" class="content-line">取货时间：{{productDetail.receiveDate}}</view>
+      <view class="content-line">描述：{{productDetail.productDescription}}</view>
+      <view class="content-line">备注：{{productDetail.notes ? productDetail.notes : '暂无'}}</view>
+    </view>
+    <image bindtap="closeDetail" class="closeicon" src="/images/closeicon.png"></image>
+  </view>

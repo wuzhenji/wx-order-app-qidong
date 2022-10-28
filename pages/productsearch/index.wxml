@@ -1,0 +1,46 @@
+<view class="search">
+  <view class="search-head">
+    <view style="height:{{statusBarHeight}}px;"></view>
+    <view class="head-name">
+      <image bindtap="handleBack" src="/images/backicon.png"></image>
+      <text>{{storeInfo.kindName}}</text>
+    </view>
+    <view class="head-box">
+      <mp-searchbar class="searchbar" bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+    </view>
+  </view>
+  <view wx:if="{{curProductList.length}}" class="search-result">
+    <view wx:for="{{curProductList}}" class="result-list">
+      <!-- 未开售 -->
+      <view bindtap="handShowDetail" data-item="{{item}}" bindtap="handShowDetail" data-item="{{item}}" wx:if="{{!item.show}}" class="item-cover">
+        <view class="cover-starttime">
+          {{item.startDate}} 开售
+        </view>
+      </view>
+      <!-- 已售馨 -->
+      <view bindtap="handShowDetail" data-item="{{item}}" bindtap="handShowDetail" data-item="{{item}}" wx:if="{{!item.productStock}}" class="item-cover">
+        <view class="cover-sold">已售罄</view>
+      </view>
+      <image bindtap="handShowDetail" data-item="{{item}}" class="list-img" src="{{item.productIcon}}"></image>
+      <view class="list-info">
+        <text class="info-name">{{item.productName}}</text>
+        <text class="info-price">￥ {{item.productPrice}}</text>
+      </view>
+      <view class="list-num" wx:if="{{item.show}}">
+        <image wx:if="{{item.num != 0}}" bindtap="handleMinus" data-item="{{item}}" src="/images/minusicon.png"></image>
+        <text>{{item.num}}</text>
+        <image wx:if="{{item.buyLimit ? item.num < item.buyLimit : true}}" bindtap="handleAdd" data-item="{{item}}"
+          src="/images/addicon.png"></image>
+        <image wx:else src="/images/addicon-grey.png"></image>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{!curProductList.length}}" class="search-result">
+    <view class="nodata">
+      <image src="/images/nodataicon.png"></image>
+      <text>暂无数据</text>
+    </view>
+  </view>
+  <productDetail wx:if="{{showDetail}}" productDetail="{{productDetail}}" bindclose="closeDetail"></productDetail>
+  <card bindflashCard="flashCard"></card>
+</view>

@@ -1,0 +1,6 @@
+<view class="productinfo">
+  <view class="productinfo-content">
+    <image mode="aspectFit" src="{{baseURL + qrcodeUrl}}"></image>
+  </view>
+  <image bindtap="closeDetail" class="closeicon" src="/images/closeicon.png"></image>
+</view>

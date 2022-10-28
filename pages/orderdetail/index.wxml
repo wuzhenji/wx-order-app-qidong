@@ -1,0 +1,55 @@
+<view class="orderdetail">
+  <view style="height:{{statusBarHeight}}px;background:#fff;"></view>
+  <view class="orderdetail-head">
+    <image bindtap="handleBack" src="/images/backicon.png"></image>
+    <text>订单详情</text>
+  </view>
+  <view class="orderdetail-con">
+    <view wx:if="{{orderDetail.orderStatus == 1 || orderDetail.orderStatus == 2}}" class="qrcode">
+      <image mode="aspectFit" src="{{baseURL + orderDetail.pickupCodeImg}}"></image>
+    </view>
+    <!-- 自取 -->
+    <view wx:if="{{orderDetail.product_a.length}}" class="info">
+      <view wx:if="{{orderDetail.canteenName}}"><text class="red">自取地址：</text>{{orderDetail.canteenName}}</view>
+      <view wx:for="{{orderDetail.product_a}}" class="info-product" bindtap="handleShowProductDetail" data-productdetail="{{item}}">
+        <image src="{{item.productIcon}}"></image>
+        <view class="product-name">
+          <text class="name">{{item.productName}}</text>
+          <text class="name">X{{item.productQuantity}}</text>
+        </view>
+        <text class="price">￥ {{item.singlePriceAll}}</text>
+      </view>
+    </view>
+    <!-- 配送 -->
+    <view wx:if="{{orderDetail.product_b.length}}" class="info">
+      <view wx:if="{{orderDetail.buyerCanteenName}}"><text class="red">配送地址：</text>{{orderDetail.buyerCanteenName}}</view>
+      <view wx:if="{{orderDetail.sendGetAddress}}"><text class="red">送货地址：</text>{{orderDetail.sendGetAddress}}</view>
+      <view wx:for="{{orderDetail.product_b}}" class="info-product" bindtap="handleShowProductDetail" data-productdetail="{{item}}">
+        <image src="{{item.productIcon}}"></image>
+        <view class="product-name">
+          <text class="name">{{item.productName}}</text>
+          <text class="name">X{{item.productQuantity}}</text>
+        </view>
+        <text class="price">￥ {{item.productQuantity * item.productPrice}}</text>
+      </view>
+    </view>
+    <view class="orderotherinfo">
+      <view wx:if="{{orderDetail.pickupCode}}"><text>核销号：</text>{{orderDetail.pickupCode || ''}}</view>
+      <view>订单编号：{{orderDetail.orderId}}</view>
+      <view>下单时间：{{orderDetail.createTime}}</view>
+    </view>
+  </view>
+</view>
+<orderdetailProduct productdetail="{{productdetail}}" orderDetail="{{orderDetail}}" wx:if="{{showProductDetail}}" bindclose="handleCloseDetail"></orderdetailProduct>
+<wxs module="computed">
+  var getStatus = function (list, code) {
+    var status = ''
+    for (var index = 0; index < list.length; index++) { 
+      if (list[index].type == code) { 
+        status = list[index].name 
+      } 
+    } 
+    return status
+  } 
+  module.exports.getStatus = getStatus 
+</wxs>

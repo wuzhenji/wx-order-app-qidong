@@ -1,0 +1,37 @@
+<view class="stroe-card">
+  <view bindtap="handleShowCard" class="card-ordericon">
+    <image src="/images/ordericon-white.png"></image>
+    <mp-badge content="{{computed.getAllProductNumAndPrice(cardList).num}}" />
+  </view>
+  <view class="card-text">已选商品</view>
+  <view class="card-text">￥ {{computed.getAllProductNumAndPrice(cardList).price}}</view>
+  <button bindtap="handlePlaceOrder">马上下单</button>
+</view>
+<view wx:if="{{showCard}}" bindtap="handleClickCard" class="card">
+  <view class="card-list {{aniStyle?'slideup':'slidedown'}}" catchtap="cancelHidden">
+    <view wx:for="{{cardList}}" class="list-item">
+      <text class="name">{{item.productName}}{{item.supplierFood === 1 ? '' : ''}}</text>
+      <view class="right">
+        <text>￥ {{item.price}}</text>
+        <view class="number">
+          <image bindtap="handleMinus" data-item="{{item}}" src="/images/minusicon-red.png"></image>
+          <text>{{item.num}}</text>
+          <image bindtap="handleAdd" data-item="{{item}}" src="/images/addicon-red.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<confirm-box wx:if="{{showConfirmBox}}" bind:close="closeConfirmBox" text='{{confirmText}}'></confirm-box>
+<wxs module="computed">
+  var getAllProductNumAndPrice = function (data) {
+    var num = 0;
+    var price = 0
+    for (var index = 0; index < data.length; index++) {
+      num += data[index].num;
+      price += data[index].price
+    }
+    return {num, price};
+  }
+  module.exports.getAllProductNumAndPrice = getAllProductNumAndPrice
+</wxs>

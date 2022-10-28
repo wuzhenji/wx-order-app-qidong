@@ -1,0 +1,28 @@
+<view class="productdetail">
+  <view style="height:{{statusBarHeight}}px;"></view>
+  <view class="productdetail-head">
+    <image bindtap="handleBack" src="/images/backicon.png"></image>
+    <text>商品详情</text>
+  </view>
+  <view class="productdetail-con">
+    <view><text class="red">商品名称：</text>{{productDetail.productName}}</view>
+    <!-- <view><text class="red">是否为第三方食材：</text>{{productDetail.supplierFood === 1 ? '是' : '否'}}</view> -->
+    <view wx:if="{{productDetail.startDate}}">
+      <text class="red">个人限购：</text>{{productDetail.buyLimit ? productDetail.buyLimit : ''}}</view>
+    <view wx:if="{{productDetail.startDate}}">
+      <text class="red">购买时间：</text>{{productDetail.startDate}} -
+      {{productDetail.endDate}}</view>
+    <view wx:if="{{productDetail.startDate}}"><text class="red">取货时间：</text>({{productDetail.weekendDay}}){{productDetail.receiveDate}} - {{productDetail.receiveEndDate}}</view>
+    <view wx:if="{{productDetail.productStock}}"><text class="red">库存数量：</text>{{productDetail.productStock}}</view>
+    <view><text class="red">描述：</text>{{productDetail.productDescription ? productDetail.productDescription : ''}}</view>
+    <view><text class="red">备注：</text>{{productDetail.notes ? productDetail.notes : ''}}</view>
+    <view><text class="red">价格：</text><text class="red">{{productDetail.productPrice}}</text></view>
+    <view bindtap="handleAdd"  class="addbtn {{ productDetail.buyLimit && productBuyNum >= productDetail.buyLimit && 'disabled' }}">
+      加入购物车
+    </view>
+    <view wx:for="{{productDetail.imagesUrl}}" wx:key="index" class="content-image">
+      <image mode="aspectFit" src="{{item.iconUrl}}"></image>
+    </view>
+  </view>
+  <card bindflashCard="flashCard"></card>
+</view>

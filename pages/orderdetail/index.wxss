@@ -1,0 +1,141 @@
+.orderdetail{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 17px
+}
+
+.orderdetail-head{
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 16px;
+  background: #ffffff;
+}
+
+.orderdetail-head image{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 20rpx;
+}
+
+.orderdetail-con{
+  padding: 20rpx 20rpx 40rpx;
+  flex: 1;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.qrcode{
+  width: 100%;
+  height: 350rpx;
+  /* border: 1px solid #dddddd; */
+  margin-bottom: 20rpx;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 10rpx;
+}
+
+.qrcode image{
+  width: 100%;
+  height: 100%;
+}
+
+.info{
+  width: 100%;
+  margin-bottom: 20rpx;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding: 20rpx;
+  position: relative;
+  background: #ffffff;
+}
+
+.orderotherinfo{
+  width: 100%;
+  margin-bottom: 10rpx;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding: 20rpx;
+  position: relative;
+  background: #ffffff;
+}
+
+.info-state{
+  position: absolute;
+  right: 50rpx;
+  top: 30rpx;
+  font-size: 18px;
+}
+
+.info-time{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.info-time a{
+  font-weight: bold;
+}
+
+.info-time .paycount{
+  position: absolute;
+  right: 10rpx;
+}
+
+.info-product{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10rpx 0;
+}
+
+.product-name {
+  width: 120px;
+  height: 60px;
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-product image{
+  width: 60px;
+  height: 60px;
+}
+
+.info-product .name{
+  width: 140px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.info-product .price{
+  position: absolute;
+  right: 20rpx;
+}
+
+.info-product .status{
+  width: 70px;
+  position: absolute;
+  right: 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.info-product .status text{
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+}

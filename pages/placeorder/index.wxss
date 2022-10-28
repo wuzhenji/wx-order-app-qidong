@@ -1,0 +1,137 @@
+.placeorder {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.placeorder-head{
+  width: 100%;
+  background: #ffffff;
+}
+.placeorder-head .head-name{
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.placeorder-head .head-name image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 20rpx;
+}
+
+.placeorder-head .head-name text {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.placeorder-content{
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 20rpx 20rpx 100rpx;
+}
+
+.orderbox{
+  width: 100%;
+  background: #ffffff;
+  border-radius: 15rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+  padding: 20rpx;
+}
+
+.orderbox .picker{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 17px;
+}
+
+.orderlist{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 20rpx 0;
+}
+
+.allcountline{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: rgba(0, 0, 0, .6);
+  padding-right: 14rpx;
+}
+.allcountline .allcount{
+  font-size: 17px;
+  color: red;
+}
+
+.orderlist image{
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.orderlist .name{
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.orderlist .name text{
+  width: 400rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.orderlist .name text:first-child{
+  font-size: 15px;
+}
+
+.orderlist .price{
+  position: absolute;
+  right: 10rpx;
+  font-size: 15px;
+}
+
+.pay-box{
+  width: 100%;
+  height: 100rpx;
+  background: #000;
+  padding: 0 40rpx;
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pay-box text{
+  font-weight: bold;
+  font-size: 17px;
+  color: #ffffff;
+}
+
+.pay-box view{
+  width: 100px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff0000;
+  color: #ffffff;
+  margin: 0;
+  font-size: 16px;
+  border-radius: 5rpx;
+}

@@ -1,0 +1,64 @@
+<view class="store">
+  <view class="store-head">
+    <image class="head-bg" src="/images/menuhome-swiper4.jpg"></image>
+    <view style="height:{{statusBarHeight}}px;"></view>
+    <view class="head-name">
+      <image bindtap="handleBack" src="/images/backicon.png"></image>
+    </view>
+    <view class="head-info">
+      <image class="storelogo" bindtap="handleGoSearch" src="{{baseURL + storeInfo.kindIcon}}"></image>
+      <text>{{storeInfo.kindName}}<text wx:if="{{catLimitCount}}">(限购{{catLimitCount}}个)</text></text>
+      <view bindtap="handleGoSearch" class="search">
+        <image src="/images/searchicon.png"></image>
+        <text>搜索</text>
+      </view>
+    </view>
+  </view>
+  <view class="store-product">
+    <view class="product-left">
+      <view bindtap="handleChangeCat" data-catid="" class="text {{selectedCatId == '' && 'selected'}}">全部</view>
+      <view bindtap="handleChangeCat" data-catid="{{item.categoryId}}" wx:for="{{catList}}" wx:key="{{item.categoryId}}"
+        class="text {{selectedCatId == item.categoryId && 'selected'}}">{{item.categoryName}}</view>
+    </view>
+    <view class="product-right">
+      <view wx:for="{{curProductList}}" wx:key="index" class="item">
+        <view bindtap="handShowDetail" data-item="{{item}}" wx:if="{{!item.show}}" class="item-cover">
+          <!-- 未开售 -->
+          <view wx:if="{{!item.innerOneDay}}" class="cover-starttime">
+            {{item.startDate}} 开售
+          </view>
+          <!-- 已截单 -->
+          <!-- <view wx:if="{{item.innerOneDay}}" class="cover-starttime">
+            {{item.endDate}} 已截单
+          </view> -->
+        </view>
+        <!-- 已售馨 -->
+        <view bindtap="handShowDetail" data-item="{{item}}" wx:if="{{!item.productStock}}" class="item-cover">
+          <view class="cover-sold">已售罄</view>
+        </view>
+        <image mode="aspectFit" bindtap="handShowDetail" data-item="{{item}}" class="item-img"
+          src="{{item.productIcon}}"></image>
+        <view class="item-name">
+          {{item.productName}}
+        </view>
+        <view class="item-price">
+          <text>￥{{item.productPrice}}</text>
+          <view wx:if="{{item.show}}" class="number">
+            <view class="number-action">
+              <image wx:if="{{item.num != 0}}" bindtap="handleMinus" data-item="{{item}}" src="/images/minusicon.png">
+              </image>
+            </view>
+            <text>{{item.num}}</text>
+            <view class="number-action">
+              <image wx:if="{{item.buyLimit ? item.num < item.buyLimit : true}}" bindtap="handleAdd"
+                data-item="{{item}}" src="/images/addicon.png"></image>
+              <!-- <image wx:else src="/images/addicon-grey.png"></image> -->
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <productDetail wx:if="{{showDetail}}" productDetail="{{productDetail}}" bindclose="closeDetail"></productDetail>
+  <card bindflashCard="flashCard"></card>
+</view>

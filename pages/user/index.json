@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bottom-bar": "/pages/component/layout/bottombar",
+    "menu_user": "/pages/component/menu_user",
+    "order_user": "/pages/component/order_user",
+    "my_user": "/pages/component/my_user",
+    "order_manager": "/pages/component/order_manager"
+  }
+}

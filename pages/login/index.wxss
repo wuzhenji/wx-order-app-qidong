@@ -1,0 +1,196 @@
+/* pages/login/index.wxss */
+.login{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+}
+.login-head{
+  display: inline-block;
+  margin: 150px 0 60px;
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+.uploadtime{
+  margin-top: 40rpx;
+  font-weight: bold;
+  color: red;
+}
+
+.wxlogin{
+  width: 90%!important;
+  height: 40px;
+  background: #55b837;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin: 0!important;
+  font-size: 16px!important;
+  font-weight: normal;
+}
+
+.wxlogin image{
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.phonelogin{
+  width: 90%!important;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15px!important;
+  background: rgba(0, 0, 0, 0);
+  font-weight: normal;
+}
+
+.limituser{
+  margin-top: 5px;
+}
+
+.loading{
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading text {
+  margin-top: 5px;
+}
+
+.loading image {
+  width: 40px;
+  height: 40px;
+  transition: all 2s;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.passtext{
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 5px;
+}
+
+.pass{
+  width: 100%;
+  height: 80vh;
+  padding: 40px 0 130px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+.pass-head{
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pass-head image {
+  width: 22px;
+  height: 22px;
+}
+
+.pass-content{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.pass-bottom{
+  width: 100%;
+  height: 130px;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+.isread a{
+  display: inline-block;
+  color: #ff0000;
+}
+
+.btns{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btns view {
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid #1a7af8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.btns button {
+  width: 100px!important;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid #1a7af8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin: 0!important;
+  font-weight: normal;
+}
+
+.btns .cancel{
+  color: #1a7af8;
+}
+
+.btns .sure{
+  background: #1a7af8;
+  color: #ffffff;
+}

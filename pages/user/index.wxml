@@ -1,0 +1,5 @@
+<bottom-bar roleid="{{roleid}}" bindchangeBar="changeBar" selected='{{selected}}'></bottom-bar>
+<menu_user wx:if="{{selected == 1}}"></menu_user>
+<order_user wx:if="{{selected == 2}}" isBottom="{{isBottom}}"></order_user>
+<order_manager wx:if="{{selected == 4 && roleid == 2}}" isBottom="{{isBottom}}"></order_manager>
+<my_user wx:if="{{selected == 3}}"></my_user>

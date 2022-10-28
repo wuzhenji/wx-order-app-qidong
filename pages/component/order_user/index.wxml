@@ -1,0 +1,62 @@
+<view class="order">
+  <view class="order-top">
+    <view style="height: {{statusBarHeight}}px"></view>
+    <view class="head-name">我的订单</view>
+  </view>
+  <view class="order-list" style="padding-top: {{statusBarHeight + 44}}px">
+    <view wx:if="{{!orderList.length}}" class="nodata">
+      暂无订单
+    </view>
+    <view wx:for="{{orderList}}" class="list" wx:key="index">
+      <!-- <view wx:if="{{item.buyerCanteenName}}">配送地址：{{item.buyerCanteenName}}</view> -->
+      <!-- <view wx:if="{{item.canteenName}}">自取地址：{{item.canteenName}}</view> -->
+      <!-- <view wx:if="{{orderDetail.sendGetAddress}}">送货地址：{{orderDetail.sendGetAddress}}</view> -->
+      <view>订单编号：{{item.orderId}}</view>
+      <view class="state">
+        {{computed.getStatus(statusList, item.orderStatus)}}
+      </view>
+      <view class="swiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}"
+          duration="{{duration}}" circular="{{circular}}">
+          <swiper-item wx:for="{{item.orderDetailList}}" wx:for-item="list" wx:key="detailId">
+            <image src="{{list.productIcon}}" />
+            <text>{{list.productName}}</text>
+          </swiper-item>
+        </swiper>
+        <view class="totalcount">共\n{{item.orderDetailList.length}}\n件</view>
+      </view>
+      <view class="time">
+        <text>下单时间: {{item.createTime}}</text>
+        <view class="paycount">￥ <a>{{item.orderAmount}}</a></view>
+      </view>
+      <!-- <view wx:if="{{item.pickupCode}}" class="line">
+        <text>核销号: {{item.pickupCode || ''}}</text>
+      </view> -->
+      <view class="line">
+        <text>取货时间: {{item.orderDetailList[0].receiveTime || '无'}}</text>
+      </view>
+      <view wx:if="{{item.orderStatus == 0}}" class="line tip">
+        <text>请在15分钟内付款，否则自动取消</text>
+      </view>
+      <view class="btns">
+        <view bindtap="handleCancelOrder" data-item="{{item}}" wx:if="{{item.orderStatus == 1}}">取消订单</view>
+        <view wx:if="{{item.orderStatus == 1 || item.orderStatus == 2}}" bindtap="handleShowQrcode" data-item="{{item}}">取货码</view>
+        <view bindtap="handleGoOrderDetail" data-item="{{item}}">订单详情</view>
+        <!-- <view bindtap="handleGoPay" data-item="{{item}}" wx:if="{{item.orderStatus == 0}}">去付款</view> -->
+      </view>
+    </view>
+  </view>
+  <Qrcode wx:if="{{showQrcode}}" qrcodeUrl="{{qrcodeUrl}}" bindclose="closeShowQrcode" />
+</view>
+<wxs module="computed">
+  var getStatus = function (list, code) {
+    var status = ''
+    for (var index = 0; index < list.length; index++) { 
+      if (list[index].type == code) { 
+        status = list[index].name 
+      } 
+    } 
+    return status
+  } 
+  module.exports.getStatus = getStatus 
+</wxs>

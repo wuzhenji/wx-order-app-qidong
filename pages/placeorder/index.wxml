@@ -1,0 +1,53 @@
+<view class="placeorder">
+  <view class="placeorder-head">
+    <view style="height:{{statusBarHeight}}px;"></view>
+    <view class="head-name">
+      <image bindtap="handleBack" src="/images/backicon.png"></image>
+      <text>下单</text>
+    </view>
+  </view>
+  <view class="placeorder-content">
+    <!-- 自取商品cardList1 -->
+    <view wx:if="{{cardList1.length}}" class="orderbox">
+      <!-- <picker bindchange="bindPickerChange_a" value="{{pickIndex_a}}" range="{{canteenList}}" range-key='name'>
+        <view class="picker">
+          <text class="red">取货地址: </text>{{ canteenList[pickIndex_a].name ? canteenList[pickIndex_a].name : '请选择'}}
+        </view>
+      </picker> -->
+      <view wx:for="{{cardList1}}" class="orderlist" wx:key="index">
+        <image src='{{item.productIcon}}'></image>
+        <view class="name">
+          <text>{{item.productName}}</text>
+          <text>x{{item.num}}</text>
+        </view>
+        <view class="price">￥{{item.productPrice}}</view>
+      </view>
+      <view class="allcountline">总计：<view class="allcount">￥{{allPrice}}</view></view>
+    </view>
+    <!-- 需要配送商品cardList2 -->
+    <!-- <view wx:if="{{cardList2.length}}" class="orderbox">
+      <picker bindchange="bindPickerChange_b" value="0" range="{{addressList}}" range-key='name'>
+        <view class="picker">
+          <text class="red">收货地址: </text> {{ pickIndex_b != '' ? addressList[pickIndex_b].name : '请选择'}}
+        </view>
+      </picker>
+      <picker bindchange="bindPickerChange_c" value="0" range="{{canteenList}}" range-key='name'>
+        <view class="picker">
+          <text class="red">配货地址: </text> {{ pickIndex_c != '' ? canteenList[pickIndex_c].name : '请选择'}}
+        </view>
+      </picker>
+      <view wx:for="{{cardList2}}" class="orderlist" wx:key="index">
+        <image src='{{item.productIcon}}'></image>
+        <view class="name">
+          <text>{{item.productName}}</text>
+          <text>x{{item.num}}</text>
+        </view>
+        <view class="price">￥{{item.productPrice}}</view>
+      </view>
+    </view> -->
+  </view>
+  <view class="pay-box">
+    <text>￥{{allPrice}}</text>
+    <view bindtap="handleGoPay">确定下单</view>
+  </view>
+</view>

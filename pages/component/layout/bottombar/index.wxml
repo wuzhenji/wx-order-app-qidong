@@ -1,0 +1,17 @@
+<view>
+  <view wx:if="{{roleid === 1}}" class="bottombar">
+    <view class="border"></view>
+    <view wx:for="{{barlist_user}}" wx:key="index" class="item" bindtap="handleChangeBar" data-index="{{item.index}}">
+      <image src="{{selected == item.index ? item.icon_active : item.icon}}"></image>
+      <view class="item-name" class="{{selected == item.index ? 'color_active' : ''}}">{{item.name}}</view>
+    </view>
+  </view>
+  <view wx:if="{{roleid === 2}}" class="bottombar">
+    <view class="border"></view>
+    <view wx:for="{{barlist_manager}}" wx:key="index" class="item" bindtap="handleChangeBar"
+      data-index="{{item.index}}">
+      <image src="{{selected == item.index ? item.icon_active : item.icon}}"></image>
+      <view class="item-name" class="{{selected == item.index ? 'color_active' : ''}}">{{item.name}}</view>
+    </view>
+  </view>
+</view>

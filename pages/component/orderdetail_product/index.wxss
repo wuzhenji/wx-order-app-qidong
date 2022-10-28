@@ -1,0 +1,28 @@
+.productdetail{
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, .2);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.conbox{
+  width: 300px;
+  min-height: 100px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.closeicon{
+  width: 30px;
+  height: 30px;
+  margin-top: 30px;
+}

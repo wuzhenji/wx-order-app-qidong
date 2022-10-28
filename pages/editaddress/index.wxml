@@ -1,0 +1,40 @@
+<view class="editaddress">
+  <view class="editaddress-head">
+    <view style="height:{{statusBarHeight}}px;"></view>
+    <view class="head-name">
+      <image bindtap="handleBack" src="/images/backicon.png"></image>
+      <text>编辑收货地址</text>
+    </view>
+  </view>
+  <view class="editaddress-content">
+    <view class="line">
+      <view class="line-title">收货地址：</view>
+      <view class="line-input">
+        <input maxlength="50" bindinput="inputAddress" value="{{form.addressName}}" placeholder="请输入收货地址" />
+      </view>
+    </view>
+    <view class="line">
+      <view class="line-title">联系人：</view>
+      <view class="line-input">
+        <input class="contact" bindinput="inputName" value="{{form.receiveName}}" maxlength="10" placeholder="请输入联系人" />
+        <view class="sex">
+          <radio-group class="sex-group" bindchange="radioChange">
+            <label wx:for="{{sexList}}" wx:key='{{item.value}}'>
+              <radio value="{{item.value}}" checked="{{item.checked}}" />
+              <text>{{item.name}}</text>
+            </label>
+          </radio-group>
+        </view>
+      </view>
+    </view>
+    <view class="line">
+      <view class="line-title">手机号：</view>
+      <view class="line-input">
+        <input maxlength="11" bindinput="inputPhone" value="{{form.receivePhone}}" placeholder="请输入手机号" />
+      </view>
+    </view>
+    <view bindtap="handleSave" class="save">
+      保存
+    </view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<view class="confirmbox">
+  <text>{{text}}</text>
+  <view bindtap="handleClose" class="btn">确 定</view>
+</view>

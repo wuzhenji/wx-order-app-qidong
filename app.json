@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/user/index",
+    "pages/manager/index",
+    "pages/store/index",
+    "pages/productsearch/index",
+    "pages/orderdetail/index",
+    "pages/placeorder/index",
+    "pages/addressmanage/index",
+    "pages/editaddress/index",
+    "pages/checkOrderDetail/index",
+    "pages/statistic/index",
+    "pages/productDetail/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "启东市机关事务局-点餐系统",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {},
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "miniprogram-datepicker": "^0.5.1",
+    "weui-miniprogram": "^1.0.7"
+  }
+}

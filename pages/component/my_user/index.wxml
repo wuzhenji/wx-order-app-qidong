@@ -1,0 +1,38 @@
+<view class="my">
+  <view class="my-head">
+    <view style="height:{{statusBarHeight}}px;"></view>
+    <view class="head-name">
+      <text>个人中心</text>
+    </view>
+    <view class="head-user">
+      <image src="/images/avatar.png" class="avatar"></image>
+      <view class="userinfo">
+        <text>{{userInfo.nickName}}</text>
+        <text>{{userInfo.phonenumber_hide}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="service-list">
+    <!-- <view bindtap="handleGoAddressManage" class="list">
+      <view class="list-name">
+        <image class="rightarrow" src="/images/addressicon.png"></image>
+        地址管理
+      </view>
+      <image class="rightarrow" src="/images/rightarrowicon.png"></image>
+    </view> -->
+    <view wx:if="{{userInfo.workAccount == 2}}" bindtap="handleGoStatistic" class="list">
+      <view class="list-name">
+        <image class="rightarrow" src="/images/statisticicon.png"></image>
+        截单统计
+      </view>
+      <image class="rightarrow" src="/images/rightarrowicon.png"></image>
+    </view>
+    <view bindtap="handleLoginOut" class="list">
+      <view class="list-name">
+        <image class="rightarrow" src="/images/loginouticon.png"></image>
+        退出登录
+      </view>
+      <image class="rightarrow" src="/images/rightarrowicon.png"></image>
+    </view>
+  </view>
+</view>

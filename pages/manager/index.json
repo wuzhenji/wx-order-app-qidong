@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bottom-bar": "/pages/component/layout/bottombar"
+  }
+}

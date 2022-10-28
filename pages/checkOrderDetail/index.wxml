@@ -1,0 +1,58 @@
+<view class="checkdetail">
+  <view class="checkdetail-head">
+    <view style="height:{{statusBarHeight}}px;"></view>
+    <view class="head-name">
+      <image bindtap="handleBack" src="/images/backicon.png"></image>
+      <text>订单详情</text>
+    </view>
+  </view>
+  <view class="checkdetail-content">
+    <view>取货号：{{orderDetail.pickupCode}}</view>
+    <view>合计：￥{{orderDetail.orderAmount}}</view>
+    <view>订单编号：{{orderDetail.orderId}}</view>
+    <view>下单时间：{{orderDetail.createTime}}</view>
+    <!-- 自取 -->
+    <view wx:if="{{orderDetail.product_a.length}}" class="content-product">
+      <view class="product-status"></view>
+      <view wx:if="{{orderDetail.canteenName}}">自取地址：{{orderDetail.canteenName}}</view>
+      <view wx:if="{{orderDetail.pickName}}">姓名：{{orderDetail.pickName}}</view>
+      <view wx:if="{{orderDetail.pickPhone}}">手机号：{{orderDetail.pickPhone}}</view>
+      <view wx:for="{{orderDetail.product_a}}" wx:key="index" class="product-list">
+        <image class="list-img" src="{{item.productIcon}}"></image>
+        <view class="list-name">
+          <text>{{item.productName}}</text>
+          <text>x{{item.productQuantity}}</text>
+        </view>
+        <view class="list-price">
+          <text>￥{{item.singlePriceAll}}</text>
+          <text wx:if="{{item.checkOff == 1}}">核销人：{{item.checkName}}</text>
+        </view>
+        <checkbox-group class="list-radio" bindchange="radioChange" data-detailId="{{item.detailId}}">
+          <checkbox value="{{item.detailId}}" disabled="{{item.checkStatus}}" checked="{{item.checkStatus2}}" />
+        </checkbox-group>
+      </view>
+    </view>
+    <!-- 配送 -->
+    <view wx:if="{{orderDetail.product_b.length}}" class="content-product">
+      <view wx:if="{{orderDetail.buyerCanteenName}}">配送地址：{{orderDetail.buyerCanteenName}}</view>
+      <view wx:if="{{orderDetail.sendGetAddress}}">送货地址：{{orderDetail.sendGetAddress}}</view>
+      <view wx:if="{{orderDetail.buyerName}}">姓名：{{orderDetail.buyerName}}</view>
+      <view wx:if="{{orderDetail.buyerPhone}}">手机号：{{orderDetail.buyerPhone}}</view>
+      <view wx:for="{{orderDetail.product_b}}" wx:key="index" class="product-list">
+        <image class="list-img" src="{{item.productIcon}}"></image>
+        <view class="list-name">
+          <text>{{item.productName}}</text>
+          <text>x{{item.productQuantity}}</text>
+        </view>
+        <view class="list-price">
+          <text>￥{{item.productPrice * item.productQuantity}}</text>
+          <text wx:if="{{item.checkOff == 1}}">核销人：{{item.checkName}}</text>
+        </view>
+        <checkbox-group class="list-radio" bindchange="radioChange" data-detailId="{{item.detailId}}">
+          <checkbox value="{{item.detailId}}" disabled="{{item.checkStatus}}" checked="{{item.checkStatus2}}" />
+        </checkbox-group>
+      </view>
+    </view>
+  </view>
+  <view bindtap="handleCheckProduct" class="checkbtn">商品核销</view>
+</view>

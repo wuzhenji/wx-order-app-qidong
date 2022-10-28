@@ -1,0 +1,21 @@
+<view class="address">
+  <view class="address-head">
+    <view style="height:{{statusBarHeight}}px;"></view>
+    <view class="head-name">
+      <image bindtap="handleBack" src="/images/backicon.png"></image>
+      <text>我的收货地址</text>
+    </view>
+  </view>
+  <view class="address-content">
+    <mp-slideview wx:for="{{addressList}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" wx:key='index'
+      class="item" data-item="{{item}}">
+      <view class="item-con">
+        <text>{{item.addressName}}</text>
+        <view>{{item.firstNameCode}} {{item.receiveSex === 1 ? '先生' : '女士'}} <a>{{item.receivePhone}}</a></view>
+      </view>
+    </mp-slideview>
+  </view>
+  <view bindtap="handleGoAddAddress" class="address-bottom">
+    新增收货地址
+  </view>
+</view>

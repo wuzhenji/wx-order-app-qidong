@@ -1,0 +1,17 @@
+<view class="menuhome">
+  <!-- <navbar></navbar> -->
+  <swiper indicator-dots="true" autoplay="true">
+    <swiper-item wx:for="{{bannerList}}" wx:key="index">
+      <view class="swipercon">
+        <image mode="aspectFit" src="{{item.carUrl}}"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class="catlist">
+    <view bindtap="handleGoStore" data-item="{{item}}" class="item-list" wx:for="{{menucatList}}" wx:key="index">
+      <image src="{{baseURL + item.kindIcon}}" class="item-list-img"></image>
+      <image wx:if="{{item.promptType === 1}}" src="/images/new-red.png" class="item-list-new"></image>
+      <text>{{item.kindName}}</text>
+    </view>
+  </view>
+</view>

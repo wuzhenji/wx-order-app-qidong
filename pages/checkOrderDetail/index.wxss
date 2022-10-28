@@ -1,0 +1,125 @@
+.checkdetail {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  font-size: 17px;
+}
+
+.checkdetail-head{
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #ccc;
+}
+
+.checkdetail-head .head-name{
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.checkdetail-head .head-name image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 20rpx;
+}
+
+.checkdetail-head .head-name text {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.checkdetail-content{
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 0 10px;
+}
+
+.content-product{
+  width: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.product-list{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.product-list:first-child{
+  margin-top: 0;
+}
+
+.product-list .list-img{
+  width: 70px;
+  height: 70px;
+}
+
+.product-list .list-name{
+  width: 120px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-list .list-name text{
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product-list .list-name text:first-child{
+  margin-bottom: 15px;
+}
+
+.product-list .list-price{
+  width: 130px;
+  /* margin-left: 10px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  right: 35px;
+}
+
+/* .product-list .list-price text:last-child{
+  margin-top: 5px;
+} */
+
+.product-list .list-price text{
+  width: 100%;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list-radio{
+  position: absolute;
+  right: 0;
+}
+
+.checkbtn{
+  width: 100%;
+  height: 60px;
+  background: #1a7af8;
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 60px;
+  text-align: center;
+}

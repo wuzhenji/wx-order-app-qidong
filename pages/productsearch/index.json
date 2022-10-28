@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "disableScroll": true,
+  "usingComponents": {
+    "card": "../component/layout/card",
+    "productDetail": "../component/productDetail",
+    "mp-searchbar": "../../miniprogram_npm/weui-miniprogram/searchbar/searchbar"
+  }
+}

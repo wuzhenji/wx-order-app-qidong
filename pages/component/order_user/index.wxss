@@ -1,0 +1,159 @@
+.order{
+  width: 100%;
+  height: 100vh;
+  font-size: 13px;
+  position: relative;
+}
+.order-top{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.order-top .head-name{
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 16px;
+  font-weight: bold;
+}
+.order-top picker{
+  width: 33.3%;
+}
+.order-top .picker{
+  width: 100%;
+  padding: 0 20rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.order-list{
+  width: 100%;
+  /* height: calc(100% - 200rpx - 150rpx); */
+  /* overflow: hidden; */
+  /* overflow-y: scroll; */
+  /* padding: 0 10px 10px; */
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 85px;
+}
+
+.nodata{
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.scrollview{
+  /* height: 100%; */
+}
+
+.list{
+  width: 100%;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, .2);
+  position: relative;
+  padding: 20rpx;
+  background: #fff;
+}
+
+.list .state{
+  position: absolute;
+  right: 40rpx;
+  top: 20rpx;
+  font-size: 14px;
+  color:rgba(0, 0, 0, .65);
+}
+
+.list .swiper{
+  position: relative;
+}
+
+.list .swiper swiper{
+  width: 100%;
+  height: 150rpx;
+  margin-top: 10rpx;
+}
+
+.list .swiper swiper-item{
+  width:150rpx !important;
+  height: 150rpx;
+  margin-right: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list .swiper swiper-item image{
+  width:120rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+
+.list .swiper swiper-item text{
+  width:120rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list .swiper .totalcount{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30rpx;
+  height: 100rpx;
+  background: rgba(255, 255, 255, .5);
+  text-align: center;
+  font-size: 9px;
+  word-wrap: break-word;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.list .time{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.list .time a{
+  font-weight: bold;
+}
+
+.list .time .paycount{
+  position: absolute;
+  right: 0;
+}
+
+.list .tip{
+  color: #ff0000;
+}
+
+.list .btns{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.list .btns view{
+  width: 150rpx;
+  height: 60rpx;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d0d0d0;
+  border-radius: 30rpx;
+}

@@ -1,0 +1,79 @@
+<view class="order">
+  <view class="order-top">
+    <view style="height: {{statusBarHeight}}px"></view>
+    <view class="head-name">订单核销</view>
+    <view class="head-search">
+      <view bindtap='handleScanCode' class="search-scan">
+        <image mode="aspectFill" src="/images/scanicon.png"></image>
+      </view>
+      <view class="search-filter">
+        <view class="filter-date">
+          日期：
+          <picker mode="date" value="{{createTime}}" start="2021-01-01" end="2031-12-31"
+            bindchange="bindStartDateChange">
+            <view class="picker picker-date">
+              {{createTime ? createTime : '请选择'}}
+            </view>
+          </picker>
+          <text>-</text>
+          <picker mode="date" value="{{endTime}}" start="2021-01-01" end="2031-12-31" bindchange="bindEndDateChange">
+            <view class="picker picker-date">
+              {{endTime ? endTime : '请选择'}}
+            </view>
+          </picker>
+          <text bindtap="clearDate" class="clear">清空</text>
+        </view>
+        <view class="filter-state">
+          取货状态：
+          <picker bindchange="bindTypeChange" range="{{typeList}}" range-key="name">
+            <view class="picker">
+              {{typeName}}
+            </view>
+          </picker>
+          <text class="name">实时刷新：</text>
+          <switch class="sendswitch" checked="{{showReFlash}}" bindchange="handleShowReFlash" />
+          <!-- <text class="name">食堂：</text>
+          <picker bindchange="bindCanteenChange" range="{{canteenList}}" range-key="name">
+            <view class="picker">
+              {{canteenName}}
+            </view>
+          </picker> -->
+        </view>
+      </view>
+    </view>
+    <view class="head-input">
+      <input bindinput="getInputValue" type="number" class="num-input" maxlength="5" placeholder="请输入取货号" />
+      <text bindtap="handleSearch" class="searchbtn">搜索</text>
+      <!-- <text class="input-text">需配送：</text>
+      <switch class="sendswitch" checked="{{showSendProduct}}" bindchange="handleShowSendProduct" /> -->
+      <!-- <text class="input-text">实时刷新：</text>
+      <switch class="sendswitch" checked="{{showReFlash}}" bindchange="handleShowReFlash" /> -->
+    </view>
+    <!-- <view class="head-type">
+      食材类别：
+      <picker bindchange="bindFoodTypeChange" range="{{foodList}}" range-key="name">
+        <view class="picker">
+          {{supplierFoodName}}
+        </view>
+      </picker>
+    </view> -->
+  </view>
+  <view class="order-content" style="padding-top: {{statusBarHeight + 44 + 110}}px">
+    <view wx:if="{{!checkOrderList.length}}" class="nodata">暂无数据</view>
+    <view bindtap="handleGoDetail" data-id="{{item.orderId}}" wx:for="{{checkOrderList}}" wx:key='index'
+      class="{{item.buyerName == '' ? 'order-list' : 'complate order-list'}}">
+      <view class="line">
+        <text>姓名：{{item.pickName}}</text>
+        <text class="line-state">{{item.statusName}}</text>
+      </view>
+      <view class="line">
+        <text>{{item.orderDetailName}}</text>
+        <text>￥{{item.orderAmount}}</text>
+      </view>
+      <view class="line">
+        <text>创建时间：{{item.createTime}}</text>
+        <text>取货号：{{item.pickupCode || ''}}</text>
+      </view>
+    </view>
+  </view>
+</view>

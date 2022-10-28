@@ -1,0 +1,15 @@
+<view class="productdetail">
+  <view class="conbox">
+    <view wx:if="{{productdetail.receiveTime}}">
+      取货时间：{{productdetail.receiveTime}}
+    </view>
+    <view wx:if="{{productdetail.checkOff == 1}}">
+      核销人：{{productdetail.checkName}}
+    </view>
+    <view wx:if="{{orderDetail.orderStatus == 1 || orderDetail.orderStatus == 2 || orderDetail.orderStatus == 3 }}">
+      核销状态：{{productdetail.checkOff == 0 ? '未核销' : '已核销'}}
+    </view>
+    <view>暂无其他信息</view>
+  </view>
+  <image bindtap="closeDetail" class="closeicon" src="/images/closeicon.png"></image>
+</view>

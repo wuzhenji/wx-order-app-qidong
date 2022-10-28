@@ -1,0 +1,31 @@
+@import '/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+page {
+  background-color: #f3f3f3;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  color: #333;
+  letter-spacing: 0;
+  word-wrap: break-word;
+}
+/* 设置常用元素尺寸规则 */
+page,text,view,textarea,input,label,form,button{box-sizing: border-box;}
+/* 按钮样式处理 */
+button{font-size: 28rpx;}
+/* 取消按钮默认的阴影效果 */
+button::after{border:none;}
+/* 设置图片默认样式，取消默认尺寸 */
+image{display: block;height: auto;width: auto;}
+
+.red{
+  color: #ff0000;
+}

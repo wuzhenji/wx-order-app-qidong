@@ -1,0 +1,103 @@
+.statistic {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.statistic-head {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+}
+
+.statistic-head .head-name {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.statistic-head .head-name image {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 20rpx;
+}
+
+.statistic-head .head-name text {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.statistic-content {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-search {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.searchLine{
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.table {
+  flex: 1;
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-line {
+  width: 100%;
+  border-bottom: 1px solid #dddddd;
+  display: flex;
+}
+.table-content{
+  flex: 1;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.nodata{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.table-line.head {
+  font-weight: bold;
+}
+
+.table-line text {
+  line-height: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.table-line .name {
+  width: 80%;
+}
+
+.table-line .canteen {
+  width: 35%;
+}
+
+.table-line .num {
+  width: 20%;
+}

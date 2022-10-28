@@ -1,0 +1,143 @@
+.stroe-card {
+  width: 100%;
+  height: 100rpx;
+  background: #000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+  z-index: 10;
+}
+
+.card-ordericon {
+  position: relative;
+}
+
+.card-ordericon image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.card-ordericon mp-badge {
+  position: absolute;
+  top: -.5em;
+  right: -.4em;
+}
+.stroe-card .card-text {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+.stroe-card button {
+  width: 200rpx !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #ff0000;
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 14px;
+  position: absolute;
+  right: 40rpx;
+}
+.card{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 9;
+}
+.card-list{
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: fixed;
+  bottom: 100rpx;
+  left: 0;
+  background: #000;
+  transition: all .3s;
+}
+@keyframes slidedown {
+  from {
+      transform: translateY(0);
+  }
+  to {
+      transform: translateY(100%);
+  }
+}
+.slidedown {
+  animation: slidedown .2s linear ;
+}
+.slideup {
+  animation: slideup 0.2s linear ;
+}
+@keyframes slideup {
+  from {
+      transform: translateY(100%);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+.card-list .list-item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+  padding: 0 40rpx;
+}
+
+.card-list .list-item:first-child{
+  margin-top: 40rpx;
+}
+
+.card-list .list-item:last-child{
+  margin-bottom: 40rpx;
+}
+
+.card-list .list-item .name{
+  width: 60%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-right: 80rpx;
+}
+
+.card-list .list-item .right{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.card-list .list-item text{
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.card-list .list-item .right text{
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.card-list .list-item .right .number{
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+
+.card-list .list-item .right .number text{
+  margin: 0 20rpx;
+}
+
+.card-list .list-item .right .number image{
+  width: 30rpx;
+  height: 30rpx;
+}

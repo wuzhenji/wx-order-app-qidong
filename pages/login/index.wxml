@@ -1,0 +1,39 @@
+<view class="login">
+  <view class="login-head">
+    <image class="logo" src="/images/logo.jpg"></image>
+    <text>微小麦</text>
+  </view>
+  <button bindtap="handleShowPass" class="wxlogin">
+    <image src="/images/wechat.png"></image>
+    微信账号快捷登录
+  </button>
+  <text class="limituser red">仅限启东市机关事务局职工使用</text>
+  <view class="passtext">
+    <text bindtap="handleShowPass" data-info="nologin" class="red">《服务条款》</text>
+    与
+    <text bindtap="handleShowPass" data-info="nologin" class="red">《隐私政策》</text>
+  </view>
+  <view wx:if="{{showPass}}" class="pass">
+    <view class="pass-head">
+      <text>服务条款与隐私政策</text>
+      <image bindtap="handleClosePass" src="/images/closeicon2.png"></image>
+    </view>
+    <view class="pass-content">该小程序仅提供给启东市机关事务局员工使用，点击登录按钮代表您同意我方获取您的微信绑定手机号码，以及您在收货地址中填写的内容。我方承诺保障您的一切隐私。小程序中我方为您提供点餐，订单管理等功能。</view>
+    <view wx:if="{{showLoginBtn}}" 
+    class="pass-bottom">
+      <view class="isread">点击登录即表示您已阅读并同意启东市机关事务局小程序的
+        <a class="red">服务条款</a>
+        与
+        <a class="red">隐私政策</a>
+      </view>
+      <view class="btns">
+        <view bindtap="handleClosePass" class="cancel">取消</view>
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="sure">登录</button>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{showLoading}}" class="loading">
+    <image src="/images/loading.png"></image>
+    <text>请稍等</text>
+  </view>
+</view>

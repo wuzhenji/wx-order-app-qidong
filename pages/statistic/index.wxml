@@ -1,0 +1,42 @@
+<view class="statistic">
+  <view class="statistic-head">
+    <view style="height:{{statusBarHeight}}px;"></view>
+    <view class="head-name">
+      <image bindtap="handleBack" src="/images/backicon.png"></image>
+      <text>截单统计</text>
+    </view>
+  </view>
+  <view class="statistic-content" style="padding-top: {{statusBarHeight + 44}}px">
+    <view class="content-search">
+      日期：
+      <picker mode="date" value="{{date}}" start="2021-01-01" end="2031-12-31" bindchange="bindDateChange">
+        <view class="picker">
+          {{date ? date : '请选择'}}
+        </view>
+      </picker>
+      <!-- <view class="searchLine">
+        食材类别：
+        <picker bindchange="bindFoodTypeChange" range="{{foodList}}" range-key="name">
+          <view class="picker">
+            {{supplierFoodName}}
+          </view>
+        </picker>
+      </view> -->
+    </view>
+    <view class="table">
+      <view class="table-line head">
+        <text class="name">商品名称</text>
+        <!-- <text class="canteen">备货餐厅</text> -->
+        <text class="num">数量</text>
+      </view>
+      <view class="table-content">
+        <view wx:if="{{!statisticData.length}}" class="nodata">暂无数据</view>
+        <view wx:for="{{statisticData}}" wx:key="index" class="table-line">
+          <text class="name">{{item.productName}}</text>
+          <text class="canteen">{{item.canteenName}}</text>
+          <text class="num">{{item.orderNum}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
