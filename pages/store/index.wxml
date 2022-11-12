@@ -7,7 +7,7 @@
     </view>
     <view class="head-info">
       <image class="storelogo" bindtap="handleGoSearch" src="{{baseURL + storeInfo.kindIcon}}"></image>
-      <text>{{storeInfo.kindName}}<text wx:if="{{catLimitCount}}">(限购{{catLimitCount}}个)</text></text>
+      <text>{{storeInfo.kindName}}<text wx:if="{{catLimitCount}}">(限购{{catLimitCount}}份)</text></text>
       <view bindtap="handleGoSearch" class="search">
         <image src="/images/searchicon.png"></image>
         <text>搜索</text>

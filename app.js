@@ -39,7 +39,6 @@ App({
   gData: {
     name: '',
     appid: 'wxea3cecbe62dc2605',
-    secret: 'f0afddae4f1c599fe03d9a14918b46ef',
     sessionId: '',
     token: '',
     baseURL: 'https://a.indexsoft.com.cn:8989/prod-api/',
