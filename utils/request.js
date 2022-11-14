@@ -6,6 +6,7 @@ const DELETE = 'DELETE';
 
 // const baseURL = 'http://192.168.0.113:8899/';
 const baseURL = 'https://a.indexsoft.com.cn:8989/prod-api/'
+// const baseURL = 'http://rd9swa.natappfree.cc/'
 
 function request(method, url, data) {
     const token = wx.getStorageSync('token') || ''

@@ -42,6 +42,7 @@ App({
     sessionId: '',
     token: '',
     baseURL: 'https://a.indexsoft.com.cn:8989/prod-api/',
+    // baseURL: 'http://rd9swa.natappfree.cc/',
     wsURL: 'ws://server.natappfree.cc:45801',
     logined: false, //用户是否登录
     authsetting: null, //用户授权结果
