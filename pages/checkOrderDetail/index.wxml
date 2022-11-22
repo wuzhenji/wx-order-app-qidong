@@ -7,6 +7,9 @@
     </view>
   </view>
   <view class="checkdetail-content">
+    <view bindtap='handleScanCode' class="search-scan">
+      <image mode="aspectFill" src="/images/scanicon.png"></image>
+    </view>
     <view>取货号：{{orderDetail.pickupCode}}</view>
     <view>合计：￥{{orderDetail.orderAmount}}</view>
     <view>订单编号：{{orderDetail.orderId}}</view>

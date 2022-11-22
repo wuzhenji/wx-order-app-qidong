@@ -35,11 +35,25 @@
 }
 
 .checkdetail-content{
+  position: relative;
   width: 100%;
   flex: 1;
   overflow: hidden;
   overflow-y: scroll;
   padding: 0 10px;
+}
+
+.checkdetail-content .search-scan{
+  position: absolute;
+  right: 6px;
+  top: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.checkdetail-content .search-scan image{
+  width: 100%;
+  height: 100%;
 }
 
 .content-product{

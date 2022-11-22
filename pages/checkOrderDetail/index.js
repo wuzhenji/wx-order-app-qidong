@@ -7,6 +7,28 @@ Page({
     orderId: '',
     orderDetail: {}
   },
+  // 扫描二维码
+  handleScanCode() {
+    var that = this;
+    wx.scanCode({ //扫描API
+      onlyFromCamera: true,
+      scanType: ['barCode', 'qrCode'],
+      success(res) { //扫描成功
+        console.log(res)
+        if (res.result) {
+          that.setData({
+            orderId: res.result
+          })
+          that.initData()
+        } else {
+          wx.showToast({
+            title: '扫描失败',
+            duration: 2000
+          })
+        }
+      }
+    })
+  },
   radioChange(e) {
     let detailId = e.currentTarget.dataset.detailid
     this.data.orderDetail.product_a.map(v => {
@@ -67,6 +89,7 @@ Page({
     wx.navigateBack()
   },
   getCheckOrderDetail() {
+    console.log(this.data.orderId, 'this.data.orderId')
     wx.showNavigationBarLoading();
     wx.showLoading({
       title: '请求中...',

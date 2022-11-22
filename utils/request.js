@@ -4,9 +4,9 @@ const PUT = 'PUT';
 const FORM = 'FORM';
 const DELETE = 'DELETE';
 
-// const baseURL = 'http://192.168.0.113:8899/';
-const baseURL = 'https://a.indexsoft.com.cn:8989/prod-api/'
-// const baseURL = 'http://rd9swa.natappfree.cc/'
+const baseURL = 'https://a.indexsoft.com.cn:8989/prod-api/' // 线上地址
+// const baseURL = 'http://192.168.0.108:8899/'; // 本地地址
+// const baseURL = 'http://kwiypi.natappfree.cc/' // 测试地址
 
 function request(method, url, data) {
     const token = wx.getStorageSync('token') || ''
